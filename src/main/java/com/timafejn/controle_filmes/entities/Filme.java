@@ -16,6 +16,7 @@ public class Filme {
     private String genero;
     @Column(name = "url")
     private String imgUrl;
+    @Column(columnDefinition = "TEXT")
     private String sinopse;
 
     public Filme() { }
