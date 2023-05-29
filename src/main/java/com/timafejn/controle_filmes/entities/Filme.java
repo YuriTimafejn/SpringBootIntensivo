@@ -12,6 +12,7 @@ public class Filme {
     private Long id;
     private String titulo;
     private String tituloOriginal;
+    private Integer duracao;
     private Integer ano;
     private String genero;
     @Column(name = "url")
@@ -21,10 +22,11 @@ public class Filme {
 
     public Filme() { }
 
-    public Filme(String titulo, String tituloOriginal, Integer ano, String genero, String imgUrl, String sinopse) {
+    public Filme(String titulo, String tituloOriginal, Integer ano, Integer duracao, String genero, String imgUrl, String sinopse) {
         this.titulo = titulo;
         this.tituloOriginal = tituloOriginal;
         this.ano = ano;
+        this.duracao = duracao;
         this.genero = genero;
         this.imgUrl = imgUrl;
         this.sinopse = sinopse;
@@ -96,5 +98,13 @@ public class Filme {
     @Override
     public int hashCode() {
         return Objects.hash(getId());
+    }
+
+    public Integer getDuracao() {
+        return duracao;
+    }
+
+    public void setDuracao(Integer duracao) {
+        this.duracao = duracao;
     }
 }
