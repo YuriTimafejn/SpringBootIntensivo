@@ -14,7 +14,6 @@ public class Filme {
     private String tituloOriginal;
     private Integer duracao;
     private Integer ano;
-    private String genero;
     @Column(name = "url")
     private String imgUrl;
     @Column(columnDefinition = "TEXT")
@@ -22,12 +21,11 @@ public class Filme {
 
     public Filme() { }
 
-    public Filme(String titulo, String tituloOriginal, Integer ano, Integer duracao, String genero, String imgUrl, String sinopse) {
+    public Filme(String titulo, String tituloOriginal, Integer ano, Integer duracao, String imgUrl, String sinopse) {
         this.titulo = titulo;
         this.tituloOriginal = tituloOriginal;
         this.ano = ano;
         this.duracao = duracao;
-        this.genero = genero;
         this.imgUrl = imgUrl;
         this.sinopse = sinopse;
     }
@@ -62,14 +60,6 @@ public class Filme {
 
     public void setAno(Integer ano) {
         this.ano = ano;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public String getImgUrl() {

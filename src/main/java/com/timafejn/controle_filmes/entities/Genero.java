@@ -4,15 +4,15 @@ import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table(name = "estudio")
-@AllArgsConstructor
+@Table(name = "genero")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @EqualsAndHashCode(of = "id")
-public class Estudio {
+public class Genero {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String estudio;
+    private String genero;
 }
