@@ -21,7 +21,7 @@ public class EstudioService {
     }
 
     @Transactional(readOnly = true)
-    public EstudioDTO findEstudio(String nomeEstudio) {
+    public EstudioDTO findByEstudio(String nomeEstudio) {
         Estudio estudio = estudioRepository.findByEstudio(nomeEstudio);
         return new EstudioDTO(estudio);
     }
