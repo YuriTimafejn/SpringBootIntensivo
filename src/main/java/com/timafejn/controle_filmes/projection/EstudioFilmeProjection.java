@@ -1,6 +1,6 @@
 package com.timafejn.controle_filmes.projection;
 
-public interface GeneroFilmeProjection {
+public interface EstudioFilmeProjection {
     Long getIdGenero ();
     Long getIdFilme();
     String getTitulo();

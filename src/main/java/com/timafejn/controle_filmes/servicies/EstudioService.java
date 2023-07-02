@@ -1,7 +1,9 @@
 package com.timafejn.controle_filmes.servicies;
 
 import com.timafejn.controle_filmes.dto.EstudioDTO;
+import com.timafejn.controle_filmes.dto.FilmesInfoDTO;
 import com.timafejn.controle_filmes.entities.Estudio;
+import com.timafejn.controle_filmes.projection.EstudioFilmeProjection;
 import com.timafejn.controle_filmes.repositories.EstudioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,9 +22,8 @@ public class EstudioService {
         return estudios.stream().map(EstudioDTO::new).toList();
     }
 
-    @Transactional(readOnly = true)
-    public EstudioDTO findByEstudio(String nomeEstudio) {
-        Estudio estudio = estudioRepository.findByEstudio(nomeEstudio);
-        return new EstudioDTO(estudio);
+    public List<FilmesInfoDTO> findByEstudio(String estudio){
+        List<EstudioFilmeProjection> result = estudioRepository.findByEstudio(estudio);
+        return result.stream().map(FilmesInfoDTO::new).toList();
     }
 }
